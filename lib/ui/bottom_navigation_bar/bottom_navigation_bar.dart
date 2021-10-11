@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fyre_stream/styles/colors.dart';
 import 'package:fyre_stream/ui/add_screen/add_screen.dart';
-import 'package:fyre_stream/ui/compass_screen/compass_screen.dart';
+import 'package:fyre_stream/ui/compass_screen/explore_screen.dart';
 import 'package:fyre_stream/ui/home_screen/home_screen.dart';
 import 'package:fyre_stream/ui/notification_screen/notificatoin_screen.dart';
 import 'package:fyre_stream/ui/profile_screen/profile_screen.dart';
@@ -17,7 +17,7 @@ class CustomBottomNavigationBar extends StatefulWidget {
 class _BottomNavigationBarState extends State<CustomBottomNavigationBar> {
   final List<Widget> _listOfWidgets = [
     const HomeScreen(),
-    const CompassScreen(),
+    const ExploreScreen(),
     const AddScreen(),
     const NotificationScreen(),
     const ProfileScreen(),
