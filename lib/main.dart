@@ -15,9 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Fyre stream',
-      theme: ThemeData(
-        primaryColor: const Color(0xff264f6b)
-      ),
+      theme: ThemeData(primaryColor: const Color(0xff264f6b)),
       home: const SplashScreen(),
     );
   }

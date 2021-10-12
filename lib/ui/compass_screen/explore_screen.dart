@@ -7,7 +7,7 @@ import 'package:fyre_stream/ui/compass_screen/components/moments_tab.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'components/dating_tab/dating_tab.dart';
-import 'components/market_place.dart';
+import 'components/market_place/market_place.dart';
 import 'components/tab_bar_tile.dart';
 
 class ExploreScreen extends StatefulWidget {

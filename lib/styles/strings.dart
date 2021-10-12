@@ -19,3 +19,12 @@ List<String> walkThroughDetailStrings = [
   'When you post an article, photos, videos or\nmemes, etc, the popularity and rewards can\n'
       'increase through direct member support.'
 ];
+
+
+List<String> sliderImage = [
+  'assets/images/slider_img.png',
+  'assets/images/slider_img.png',
+  'assets/images/slider_img.png',
+  'assets/images/slider_img.png',
+  'assets/images/slider_img.png'
+];
