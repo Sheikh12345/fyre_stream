@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fyre_stream/styles/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'components/custom_bottom_bar_home.dart';
 import 'components/menu_tile.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -61,13 +62,18 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           margin: const EdgeInsets.symmetric(horizontal: 7),
                         ),
-                        Container(
-                          width: size.width * 0.055,
-                          height: size.width * 0.055,
-                          margin: const EdgeInsets.symmetric(horizontal: 3),
-                          child: SvgPicture.asset(
-                            'assets/icons/menu_icon.svg',
-                            fit: BoxFit.fill,
+                        InkWell(
+                          onTap: () {
+                            showSheet(context);
+                          },
+                          child: Container(
+                            width: size.width * 0.055,
+                            height: size.width * 0.055,
+                            margin: const EdgeInsets.symmetric(horizontal: 3),
+                            child: SvgPicture.asset(
+                              'assets/icons/menu_icon.svg',
+                              fit: BoxFit.fill,
+                            ),
                           ),
                         ),
                         const SizedBox(
@@ -726,5 +732,17 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
+  }
+
+  showSheet(BuildContext context) {
+    return showModalBottomSheet(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(26),
+          ),
+        ),
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        context: context,
+        builder: (context) => const CustomBottomSheetHome());
   }
 }

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Fyre stream',
       theme: ThemeData(primaryColor: const Color(0xff264f6b)),
-      home: const SplashScreen(),
+      home: const CustomBottomNavigationBar(),
     );
   }
 }
