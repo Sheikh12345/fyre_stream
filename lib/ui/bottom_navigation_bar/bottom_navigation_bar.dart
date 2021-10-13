@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fyre_stream/styles/colors.dart';
-import 'package:fyre_stream/ui/add_screen/add_screen.dart';
+import 'package:fyre_stream/ui/create_post/create_post.dart';
 import 'package:fyre_stream/ui/compass_screen/explore_screen.dart';
 import 'package:fyre_stream/ui/home_screen/home_screen.dart';
 import 'package:fyre_stream/ui/notification_screen/notificatoin_screen.dart';
@@ -18,7 +18,7 @@ class _BottomNavigationBarState extends State<CustomBottomNavigationBar> {
   final List<Widget> _listOfWidgets = [
     const HomeScreen(),
     const ExploreScreen(),
-    const AddScreen(),
+    const CreatePost(),
     const NotificationScreen(),
     const ProfileScreen(),
   ];

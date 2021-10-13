@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fyre_stream/helper_functions/navigation_function.dart';
 import 'package:fyre_stream/styles/colors.dart';
+import 'package:fyre_stream/ui/search_screen/search_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'components/custom_bottom_bar_home.dart';
@@ -45,12 +47,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     Row(
                       children: [
-                        Container(
-                          width: size.width * 0.085,
-                          height: size.width * 0.085,
-                          child: SvgPicture.asset(
-                            'assets/icons/search_icon.svg',
-                            fit: BoxFit.fill,
+                        InkWell(
+                          onTap: () {
+                            screenPush(context, const SearchScreen());
+                          },
+                          child: Container(
+                            width: size.width * 0.085,
+                            height: size.width * 0.085,
+                            child: SvgPicture.asset(
+                              'assets/icons/search_icon.svg',
+                              fit: BoxFit.fill,
+                            ),
                           ),
                         ),
                         Container(

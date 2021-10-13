@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fyre_stream/helper_functions/navigation_function.dart';
+import 'package:fyre_stream/ui/create_post/create_post.dart';
+import 'package:fyre_stream/ui/create_event/craete_event.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomBottomSheetHome extends StatefulWidget {
@@ -14,20 +17,21 @@ class _CustomBottomSheetHomeState extends State<CustomBottomSheetHome> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.55,
+      height: size.height * 0.28,
       width: size.width,
-      padding: EdgeInsets.only(left: 20, right: 13, top: 20),
+      padding: const EdgeInsets.only(left: 20, right: 13, top: 20),
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "  Mention People",
+                " Create New Activity",
                 style: GoogleFonts.rubik(
-                    color: Colors.black,
+                    color: const Color(0xff0C3C5C),
                     fontSize: size.width * 0.05,
                     fontWeight: FontWeight.w700),
               ),
@@ -37,65 +41,69 @@ class _CustomBottomSheetHomeState extends State<CustomBottomSheetHome> {
                   },
                   icon: const Icon(
                     Icons.keyboard_arrow_down_sharp,
-                    color: Colors.black,
+                    color: Colors.grey,
                   ))
             ],
           ),
-          TextField(
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              hintText: 'Search by name',
-              hintStyle: GoogleFonts.rubik(
-                color: Colors.grey,
-              ),
-              prefixIcon: Container(
-                width: size.width * 0.01,
-                height: size.width * 0.01,
-                padding: EdgeInsets.all(12),
-                child: SvgPicture.asset(
-                  'assets/icons/search_icon1.svg',
-                  fit: BoxFit.fill,
+          InkWell(
+            onTap: () {
+              screenPush(context, const CreatePost());
+            },
+            child: Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(right: 20),
+                  child: SvgPicture.asset('assets/icons/image_icon1.svg'),
                 ),
-              ),
+                Text(
+                  'Post',
+                  style: GoogleFonts.rubik(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w600,
+                      fontSize: size.width * 0.048),
+                )
+              ],
             ),
           ),
-          Expanded(
-            child: ListView.builder(itemBuilder: (context, index) {
-              return Container(
-                margin: const EdgeInsets.symmetric(vertical: 10),
-                child: Row(
-                  children: [
-                    Container(
-                      width: size.width * 0.13,
-                      height: size.width * 0.13,
-                      decoration: const BoxDecoration(
-                          color: Colors.black, shape: BoxShape.circle),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Cole Sprouse',
-                          style: GoogleFonts.rubik(
-                            color: Color(0xff0C3C5C),
-                          ),
-                        ),
-                        Text(
-                          '18- Altiana George',
-                          style: GoogleFonts.rubik(
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
+          InkWell(
+            onTap: () {
+              screenPush(context, const CreateEvent());
+            },
+            child: Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(right: 20),
+                  child: SvgPicture.asset('assets/icons/calender_icon.svg'),
                 ),
-              );
-            }),
-          )
+                Text(
+                  'Event',
+                  style: GoogleFonts.rubik(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w600,
+                      fontSize: size.width * 0.048),
+                )
+              ],
+            ),
+          ),
+          Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(right: 20),
+                child: SvgPicture.asset('assets/icons/flash.svg'),
+              ),
+              Text(
+                'Moment',
+                style: GoogleFonts.rubik(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w600,
+                  fontSize: size.width * 0.048,
+                ),
+              )
+            ],
+          ),
+          const SizedBox(
+            height: 5,
+          ),
         ],
       ),
     );
