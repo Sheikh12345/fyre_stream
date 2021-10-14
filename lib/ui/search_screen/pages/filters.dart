@@ -5,6 +5,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fyre_stream/helper_functions/navigation_function.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'mutual_matches.dart';
+
 class FiltersScreen extends StatefulWidget {
   const FiltersScreen({Key? key}) : super(key: key);
 
@@ -13,7 +15,7 @@ class FiltersScreen extends StatefulWidget {
 }
 
 class _FiltersScreenState extends State<FiltersScreen> {
-  double start =0.0, end = 20.0;
+  double start = 0.0, end = 20.0;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +56,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   ),
                   InkWell(
                     onTap: () {
-                      screenPush(context, FiltersScreen());
+                      screenPush(context, const MutualMatches());
                     },
                     child: SizedBox(
                       width: size.width * 0.05,
@@ -208,12 +210,14 @@ class _FiltersScreenState extends State<FiltersScreen> {
                     height: 20,
                   ),
                   Padding(
-                    padding:  const EdgeInsets.only(left: 10,bottom: 6),
-                    child: Text('Age Range',style: GoogleFonts.rubik(
-                      color: const Color(0xff0C3C5C),
-                     fontSize:size.width*0.04,
-                      fontWeight: FontWeight.w500
-                    ),),
+                    padding: const EdgeInsets.only(left: 10, bottom: 6),
+                    child: Text(
+                      'Age Range',
+                      style: GoogleFonts.rubik(
+                          color: const Color(0xff0C3C5C),
+                          fontSize: size.width * 0.04,
+                          fontWeight: FontWeight.w500),
+                    ),
                   ),
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
@@ -221,36 +225,36 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       inactiveTrackColor: Color(0xffCDCDCD),
                       trackHeight: 8.0,
                       thumbColor: Color(0xffFF6961),
-                      thumbShape: RoundSliderThumbShape(
-                          enabledThumbRadius: size.width),
+                      thumbShape:
+                          RoundSliderThumbShape(enabledThumbRadius: size.width),
                       overlayColor: Colors.purple.withAlpha(32),
-                      overlayShape: RoundSliderOverlayShape(overlayRadius: 14.0),
+                      overlayShape:
+                          RoundSliderOverlayShape(overlayRadius: 14.0),
                     ),
                     child: RangeSlider(
-                        min: 0,
-                        max: 25,
-
-                        onChanged: (value) {
-                          setState(() {
-                            start = value.start;
-                            end = value.end;
-                          });
-                        }, values:RangeValues(
-                        start,end
-                    ),
-
+                      min: 0,
+                      max: 25,
+                      onChanged: (value) {
+                        setState(() {
+                          start = value.start;
+                          end = value.end;
+                        });
+                      },
+                      values: RangeValues(start, end),
                     ),
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   Padding(
-                    padding:  const EdgeInsets.only(left: 10,bottom: 6),
-                    child: Text('Distance Range',style: GoogleFonts.rubik(
-                        color: const Color(0xff0C3C5C),
-                        fontSize:size.width*0.04,
-                        fontWeight: FontWeight.w500
-                    ),),
+                    padding: const EdgeInsets.only(left: 10, bottom: 6),
+                    child: Text(
+                      'Distance Range',
+                      style: GoogleFonts.rubik(
+                          color: const Color(0xff0C3C5C),
+                          fontSize: size.width * 0.04,
+                          fontWeight: FontWeight.w500),
+                    ),
                   ),
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
@@ -258,27 +262,24 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       inactiveTrackColor: Color(0xffCDCDCD),
                       trackHeight: 8.0,
                       thumbColor: Color(0xffFF6961),
-                      thumbShape: RoundSliderThumbShape(
-                          enabledThumbRadius: size.width),
+                      thumbShape:
+                          RoundSliderThumbShape(enabledThumbRadius: size.width),
                       overlayColor: Colors.purple.withAlpha(32),
-                      overlayShape: RoundSliderOverlayShape(overlayRadius: 14.0),
+                      overlayShape:
+                          RoundSliderOverlayShape(overlayRadius: 14.0),
                     ),
                     child: RangeSlider(
                       min: 0,
                       max: 25,
-
                       onChanged: (value) {
                         setState(() {
                           start = value.start;
                           end = value.end;
                         });
-                      }, values:RangeValues(
-                        start,end
-                    ),
-
+                      },
+                      values: RangeValues(start, end),
                     ),
                   ),
-
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 10),
                     padding: const EdgeInsets.only(left: 15),
@@ -292,10 +293,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey.shade400, width: 1),
+                        border:
+                            Border.all(color: Colors.grey.shade400, width: 1),
                         borderRadius: BorderRadius.circular(7)),
                   ),
-
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 10),
                     padding: const EdgeInsets.only(left: 15),
@@ -309,10 +310,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey.shade400, width: 1),
+                        border:
+                            Border.all(color: Colors.grey.shade400, width: 1),
                         borderRadius: BorderRadius.circular(7)),
                   ),
-
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 10),
                     padding: const EdgeInsets.only(left: 15),
@@ -326,10 +327,10 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey.shade400, width: 1),
+                        border:
+                            Border.all(color: Colors.grey.shade400, width: 1),
                         borderRadius: BorderRadius.circular(7)),
                   ),
-
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 10),
                     padding: const EdgeInsets.only(left: 15),
@@ -343,7 +344,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
                       ),
                     ),
                     decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey.shade400, width: 1),
+                        border:
+                            Border.all(color: Colors.grey.shade400, width: 1),
                         borderRadius: BorderRadius.circular(7)),
                   ),
                 ],

@@ -49,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         InkWell(
                           onTap: () {
+                            print("Kashif");
                             screenPush(context, const SearchScreen());
                           },
                           child: Container(
