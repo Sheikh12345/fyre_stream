@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fyre_stream/helper_functions/navigation_function.dart';
+import 'package:fyre_stream/ui/menu/menu_options.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'friends.dart';
@@ -135,20 +136,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
                      fontSize: size.width*0.04,
                      letterSpacing: 0.8
                  ),),
-                 Container(
-                   margin: EdgeInsets.only(top: 10),
-                   width: size.width,
-                   alignment: Alignment.center,
-                   padding: EdgeInsets.symmetric(vertical: 7),
-                   child: Text('Edit Profile',style: GoogleFonts.rubik(
-                       color: Color(0xffFF2C01),
-                       fontWeight: FontWeight.w600
-                   ),),
-                   decoration: BoxDecoration(
-                       border: Border.all(
+                 InkWell(
+                   onTap: (){
+                     screenPush(context, MenuScreen());
+                   },
+                   child: Container(
+                     margin: EdgeInsets.only(top: 10),
+                     width: size.width,
+                     alignment: Alignment.center,
+                     padding: EdgeInsets.symmetric(vertical: 7),
+                     child: Text('Edit Profile',style: GoogleFonts.rubik(
                          color: Color(0xffFF2C01),
-                       ),
-                       borderRadius: BorderRadius.circular(5)
+                         fontWeight: FontWeight.w600
+                     ),),
+                     decoration: BoxDecoration(
+                         border: Border.all(
+                           color: Color(0xffFF2C01),
+                         ),
+                         borderRadius: BorderRadius.circular(5)
+                     ),
                    ),
                  ),
                  SizedBox(
