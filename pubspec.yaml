@@ -69,6 +69,8 @@ flutter:
     - assets/icons/
     - assets/icons/menu/
     - assets/icons/settings/
+    - assets/icons/settings/
+    - assets/icons/moment/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

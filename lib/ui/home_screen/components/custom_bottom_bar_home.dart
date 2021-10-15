@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fyre_stream/helper_functions/navigation_function.dart';
+import 'package:fyre_stream/ui/create_moment/create_moment_screen.dart';
 import 'package:fyre_stream/ui/create_post/create_post.dart';
 import 'package:fyre_stream/ui/create_event/craete_event.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -85,21 +86,27 @@ class _CustomBottomSheetHomeState extends State<CustomBottomSheetHome> {
               ],
             ),
           ),
-          Row(
-            children: [
-              Container(
-                margin: EdgeInsets.only(right: 20),
-                child: SvgPicture.asset('assets/icons/flash.svg'),
-              ),
-              Text(
-                'Moment',
-                style: GoogleFonts.rubik(
-                  color: Colors.grey,
-                  fontWeight: FontWeight.w600,
-                  fontSize: size.width * 0.048,
+          InkWell(
+            onTap: (){
+              Navigator.pop(context);
+              screenPush(context, CreateMoment());
+            },
+            child: Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(right: 20),
+                  child: SvgPicture.asset('assets/icons/flash.svg'),
                 ),
-              )
-            ],
+                Text(
+                  'Moment',
+                  style: GoogleFonts.rubik(
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w600,
+                    fontSize: size.width * 0.048,
+                  ),
+                )
+              ],
+            ),
           ),
           const SizedBox(
             height: 5,
