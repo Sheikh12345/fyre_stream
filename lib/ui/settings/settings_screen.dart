@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fyre_stream/helper_functions/navigation_function.dart';
 import 'package:fyre_stream/ui/settings/pages/change_password.dart';
+import 'package:fyre_stream/ui/settings/pages/notifications_settings.dart';
+import 'package:fyre_stream/ui/settings/pages/profile_settings.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'components/custom_list_tile.dart';
@@ -67,6 +69,9 @@ Text('Account Settings',style: GoogleFonts.rubik(
               height: size.height*0.02,
             ),
             CustomListTile(
+              onTap: (){
+                screenPush(context, ProfileSettings());
+              },
               image: 'assets/icons/settings/general_info.svg',
               title: 'General Information',
               heading: 'Name, Location,Birthday',
@@ -110,6 +115,9 @@ Text('Account Settings',style: GoogleFonts.rubik(
             ),
 
             CustomListTile(
+              onTap: (){
+                screenPush(context,NotificationSettings());
+              },
               image: 'assets/icons/settings/push_notifications.svg',
               title: 'Push Notification',
               heading: 'Handle your notifications',

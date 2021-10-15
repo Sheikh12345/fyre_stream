@@ -512,6 +512,7 @@ class _Filters2State extends State<Filters2> {
           ],
         ),
       ),
-    ));
+    ),
+    );
   }
 }

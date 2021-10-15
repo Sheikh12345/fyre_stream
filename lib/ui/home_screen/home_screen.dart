@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fyre_stream/helper_functions/navigation_function.dart';
 import 'package:fyre_stream/styles/colors.dart';
+import 'package:fyre_stream/ui/phone_ringing/phone_ringing.dart';
 import 'package:fyre_stream/ui/search_screen/search_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -61,14 +62,19 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                         ),
-                        Container(
-                          width: size.width * 0.055,
-                          height: size.width * 0.055,
-                          child: SvgPicture.asset(
-                            'assets/icons/messanger_icon.svg',
-                            fit: BoxFit.fill,
+                        InkWell(
+                          onTap: (){
+                            screenPush(context, const PhoneRinging());
+                          },
+                          child: Container(
+                            width: size.width * 0.055,
+                            height: size.width * 0.055,
+                            child: SvgPicture.asset(
+                              'assets/icons/messanger_icon.svg',
+                              fit: BoxFit.fill,
+                            ),
+                            margin: const EdgeInsets.symmetric(horizontal: 7),
                           ),
-                          margin: const EdgeInsets.symmetric(horizontal: 7),
                         ),
                         InkWell(
                           onTap: () {

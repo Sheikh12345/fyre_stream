@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fyre_stream/helper_functions/navigation_function.dart';
+import 'package:fyre_stream/ui/create_moment/share_moment.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CreateMoment2 extends StatefulWidget {
@@ -33,22 +35,27 @@ class _CreateMoment2State extends State<CreateMoment2> {
                     fit: BoxFit.fill,
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: size.width * 0.03,
-                      vertical: size.width * 0.02),
-                  margin: EdgeInsets.only(top: 20, right: 20),
-                  child: Text(
-                    'Share',
-                    style: GoogleFonts.rubik(
-                        color: Colors.black,
-                        fontSize: size.width * 0.034,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: 1),
+                InkWell(
+                  onTap: () {
+                    screenPush(context, ShareMoment());
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: size.width * 0.03,
+                        vertical: size.width * 0.02),
+                    margin: EdgeInsets.only(top: 20, right: 20),
+                    child: Text(
+                      'Share',
+                      style: GoogleFonts.rubik(
+                          color: Colors.black,
+                          fontSize: size.width * 0.034,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 1),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20)),
                   ),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20)),
                 )
               ],
             ),
@@ -63,26 +70,33 @@ class _CreateMoment2State extends State<CreateMoment2> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Container(
-              height:  size.width * 0.08,
+              height: size.width * 0.08,
               width: size.width * 0.08,
-              child: SvgPicture.asset('assets/icons/moment/smily_icon.svg',fit: BoxFit.fill,),
+              child: SvgPicture.asset(
+                'assets/icons/moment/smily_icon.svg',
+                fit: BoxFit.fill,
+              ),
             ),
             Container(
-              height:  size.width * 0.08,
+              height: size.width * 0.08,
               width: size.width * 0.08,
-              child: SvgPicture.asset('assets/icons/moment/brush.svg',fit: BoxFit.fill,),
+              child: SvgPicture.asset(
+                'assets/icons/moment/brush.svg',
+                fit: BoxFit.fill,
+              ),
             ),
             Container(
-              height:  size.width * 0.08,
+              height: size.width * 0.08,
               width: size.width * 0.08,
               child: SvgPicture.asset('assets/icons/moment/smily_icon.svg'),
-            ), Container(
-              height:  size.width * 0.08,
+            ),
+            Container(
+              height: size.width * 0.08,
               width: size.width * 0.08,
               child: SvgPicture.asset('assets/icons/moment/color_filter.svg'),
             ),
             Container(
-              height:  size.width * 0.08,
+              height: size.width * 0.08,
               width: size.width * 0.08,
               child: SvgPicture.asset('assets/icons/moment/text_icon.svg'),
             ),
